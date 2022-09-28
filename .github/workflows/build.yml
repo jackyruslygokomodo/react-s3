@@ -1,12 +1,18 @@
 name: Build
 on:
-  push:
-    branches:
-      - 'releases/**'
-jobs:
-  build:
-    runs-on: ubuntu-18.04
-    steps:
-      - name: Check
-        run: |
-          env
+  workflow_dispatch:
+    inputs:
+      app:
+        type: choice
+        description: App type
+        options: 
+        - admin
+        - seller
+        - buyer
+      environment:
+        type: choice
+        description: Environment
+        options: 
+        - production
+        - staging
+        - demo

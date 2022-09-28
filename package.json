@@ -1,0 +1,26 @@
+{
+  "name": "react-s3",
+  "version": "1.0.0",
+  "description": "Release Integration 5",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/jackyruslygokomodo/react-s3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackyruslygokomodo/react-s3/issues"
+  },
+  "homepage": "https://github.com/jackyruslygokomodo/react-s3#readme"
+}
