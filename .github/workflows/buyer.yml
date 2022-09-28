@@ -1,12 +1,15 @@
 name: Buyer
 on:
   push:
+    branches:
+      - master
     paths:
       - packages/buyer/**
 jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
-      - name: Check
+      - name: Build
         run: |
-          env
+          cd packages/buyer && yarn build
+          # Hasil buildnya di packages/buyer/dist

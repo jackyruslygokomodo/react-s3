@@ -1,12 +1,15 @@
 name: Admin
 on:
   push:
+    branches:
+      - master
     paths:
       - packages/admin/**
 jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
-      - name: Check
+      - name: Build
         run: |
-          env
+          cd packages/admin && yarn build
+          # Hasil buildnya di packages/admin/dist
