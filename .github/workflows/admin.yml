@@ -14,6 +14,6 @@ jobs:
         run: |
           yarn
           yarn build:lib
-          yarn build:admin
+          yarn build:admin --mode staging
           ls packages/admin/dist
           # Hasil buildnya di packages/admin/dist
