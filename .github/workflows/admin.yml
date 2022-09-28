@@ -21,6 +21,5 @@ jobs:
           yarn
           yarn build:lib
           yarn build:admin --mode staging
-          ls packages/admin/dist
           aws s3 sync --delete packages/admin/dist s3://gkmd-frontend-deployment-demo/admin/staging/
           aws cloudfront create-invalidation --distribution-id E21P1QPKYKMMVO --paths "/*"
