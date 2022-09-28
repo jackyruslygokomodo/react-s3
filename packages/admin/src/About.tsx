@@ -6,7 +6,7 @@ const LazyComponent = lazy(() => import('./LazyComponent'));
 const About = () => {
     const [isVisible, setIsVisible] = useState(false);
 
-    return <div>About Lazy
+    return <div>About Lazy Load
 
         <Link to={`/`}>Go to Home</Link>
 
