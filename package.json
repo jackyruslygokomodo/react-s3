@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/jackyruslygokomodo/react-s3/issues"
   },
-  "homepage": "https://github.com/jackyruslygokomodo/react-s3#readme"
+  "homepage": "https://github.com/jackyruslygokomodo/react-s3#readme",
+  "dependencies": {
+    "react-router-dom": "^6.4.1"
+  }
 }
