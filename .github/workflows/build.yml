@@ -16,3 +16,11 @@ on:
         - production
         - staging
         - demo
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Check
+        run: |
+          env
