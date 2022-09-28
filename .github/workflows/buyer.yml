@@ -1,0 +1,12 @@
+name: Buyer
+on:
+  push:
+    paths:
+      - packages/buyer/**
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Check
+        run: |
+          env

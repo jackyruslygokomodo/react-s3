@@ -1,0 +1,12 @@
+name: Admin
+on:
+  push:
+    paths:
+      - packages/admin/**
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Check
+        run: |
+          env
