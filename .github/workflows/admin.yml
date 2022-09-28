@@ -11,5 +11,6 @@ jobs:
     steps:
       - name: Build
         run: |
-          cd packages/admin && yarn build
+          yarn
+          yarn build
           # Hasil buildnya di packages/admin/dist
