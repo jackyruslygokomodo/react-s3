@@ -35,7 +35,8 @@ jobs:
           DEPLOYMENT_DISTRIBUTION: ${{ secrets.CF_DISTRIBUTION_BUYER_STAGING }}
         run: |
           echo ${{ secrets['ADMIN'] }}
-          echo ${{ format('{0}_A', github.event.inputs.web^^) }}
-          echo ${{ format('{0}_A', github.event.inputs.environment^^) }}
+          echo ${{ 'testing' }}
+          echo ${{ format('{0}_A', github.event.inputs.web) }}
+          echo ${{ format('{0}_A', github.event.inputs.environment) }}
           echo ${{ secrets[format('{0}_A', github.event.inputs.web)] }}
           echo ${{ secrets[format('{0}_A', github.event.inputs.environment)] }}
