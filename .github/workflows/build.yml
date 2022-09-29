@@ -38,5 +38,5 @@ jobs:
           DEPLOYMENT_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           DEPLOYMENT_DISTRIBUTION: ${{ secrets[format('CF_DISTRIBUTION_{0}_{1}', env.UPPER_WEB, env.UPPER_ENVIRONMENT)] }}
         run: |
-          echo $DEPLOYMENT_DISTRIBUTION
+          sh deployment.sh
           
