@@ -20,7 +20,6 @@ jobs:
         env:
           DEPLOYMENT_WEB: admin
           DEPLOYMENT_ENV: staging
-          DEPLOYMENT_BUCKET: s3://gkmd-frontend-deployment-demo
-          DEPLOYMENT_DISTRIBUTION: E21P1QPKYKMMVO
+          DEPLOYMENT_DISTRIBUTION: ${{ secrets.CF_DISTRIBUTION_ADMIN_STAGING }}
         run: |
           sh deployment.sh
