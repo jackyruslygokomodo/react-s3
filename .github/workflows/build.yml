@@ -34,12 +34,11 @@ jobs:
           DEPLOYMENT_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           DEPLOYMENT_DISTRIBUTION: ${{ secrets.CF_DISTRIBUTION_BUYER_STAGING }}
         run: |
-          s="Hello World"
           UPPER_WEB=$(echo "${{ inputs.web }}" | tr '[:lower:]' '[:upper:]')
           UPPER_ENVIRONMENT=$(echo "${{ inputs.environment }}" | tr '[:lower:]' '[:upper:]')
           echo $UPPER_WEB
           echo $UPPER_ENVIRONMENT
-          echo ${{ secrets[format('{0}', UPPER_WEB)] }}
+          # echo ${{ secrets[format('{0}', UPPER_WEB)] }}
           echo ${{ secrets[format('${UPPER_WEB}')] }}
 
           echo ${{ secrets['${UPPER_WEB}'] }}
