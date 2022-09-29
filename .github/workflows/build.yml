@@ -37,7 +37,8 @@ jobs:
           s="Hello World"
           UPPER_WEB=$(echo "${{ inputs.web }}" | tr '[:lower:]' '[:upper:]')
           UPPER_ENVIRONMENT=$(echo "${{ inputs.environment }}" | tr '[:lower:]' '[:upper:]')
-
+          echo $UPPER_WEB
+          echo $UPPER_ENVIRONMENT
           echo ${{ secrets['${UPPER_WEB}'] }}
           echo ${{ secrets['${UPPER_ENVIRONMENT}'] }}
           echo ${{ '${test_variable}' }}
