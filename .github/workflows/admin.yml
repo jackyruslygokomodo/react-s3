@@ -13,13 +13,13 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-secret-access-key: bE7Val5wD4bphT0/06Z+SWNKhJzCDcrOFOVek0Xd
-          aws-access-key-id: AKIAU4YKI3EGXLJO6AR4
-          aws-region: ap-southeast-1
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-region: ${{ secrets.AWS_REGION }}
       - name: Build
         run: |
-          yarn
-          yarn build:lib
-          yarn build:admin --mode staging
-          aws s3 sync packages/admin/dist s3://gkmd-frontend-deployment-demo/admin/staging/
-          aws cloudfront create-invalidation --distribution-id E21P1QPKYKMMVO --paths "/index.html"
+          export DEPLOYMENT_WEB=admin
+          export DEPLOYMENT_ENV=staging
+          export DEPLOYMENT_BUCKET=s3://gkmd-frontend-deployment-demo
+          export DEPLOYMENT_DISTRIBUTION=E21P1QPKYKMMVO
+          sh deployment.sh
