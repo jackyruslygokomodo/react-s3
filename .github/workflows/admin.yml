@@ -18,9 +18,9 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Build
         env:
-          DEPLOYMENT_WEB=admin
-          DEPLOYMENT_ENV=staging
-          DEPLOYMENT_BUCKET=s3://gkmd-frontend-deployment-demo
-          DEPLOYMENT_DISTRIBUTION=E21P1QPKYKMMVO
+          DEPLOYMENT_WEB: admin
+          DEPLOYMENT_ENV: staging
+          DEPLOYMENT_BUCKET: s3://gkmd-frontend-deployment-demo
+          DEPLOYMENT_DISTRIBUTION: E21P1QPKYKMMVO
         run: |
           sh deployment.sh
