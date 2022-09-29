@@ -36,19 +36,7 @@ jobs:
           DEPLOYMENT_WEB: ${{ inputs.web }}
           DEPLOYMENT_ENV: ${{ inputs.environment }}
           DEPLOYMENT_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-          DEPLOYMENT_DISTRIBUTION: ${{ secrets.CF_DISTRIBUTION_BUYER_STAGING }}
+          DEPLOYMENT_DISTRIBUTION: ${{ secrets[format('CF_DISTRIBUTION_{0}_', env.UPPER_WEB, env.UPPER_ENVIRONMENT)] }}
         run: |
-          echo $UPPER_WEB
-          echo $GITHUB_ENV
-          echo $UPPER_ENVIRONMENT
-          echo ${{ format('{0}', env.UPPER_WEB) }}
-          echo ${{ secrets[format('{0}', env.UPPER_WEB)] }}
-
-
-          echo ${{ secrets['${UPPER_WEB}'] }}
-          echo ${{ secrets['${UPPER_ENVIRONMENT}'] }}
-          echo ${{ '${test_variable}' }}
-          echo ${{ format('{0}_A', github.event.inputs.web) }}
-          echo ${{ format('{0}_A', github.event.inputs.environment) }}
-          echo ${{ secrets[format('{0}', github.event.inputs.web)] }}
-          echo ${{ secrets[format('{0}_A', github.event.inputs.environment)] }}
+          echo $DEPLOYMENT_DISTRIBUTION
+          
