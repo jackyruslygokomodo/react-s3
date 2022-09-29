@@ -6,7 +6,9 @@
   "private": true,
   "scripts": {
     "build:lib": "echo Build Lib",
-    "build:admin": "cd packages/admin && yarn build"
+    "build:admin": "cd packages/admin && yarn build",
+    "build:buyer": "cd packages/buyer && yarn build",
+    "build:seller": "cd packages/seller && yarn build"
   },
   "workspaces": {
     "packages": [
