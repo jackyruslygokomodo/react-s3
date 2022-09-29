@@ -7,7 +7,7 @@ on:
       - packages/buyer/**
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04(ubuntu-latest)
     steps:
       - uses: actions/checkout@v3
       - name: Configure AWS credentials
