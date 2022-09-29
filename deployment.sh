@@ -1,4 +1,3 @@
-env
 yarn
 yarn build:lib
 yarn build:${DEPLOYMENT_WEB} --mode ${DEPLOYMENT_ENV}
