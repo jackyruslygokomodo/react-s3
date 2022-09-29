@@ -34,8 +34,9 @@ jobs:
           DEPLOYMENT_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           DEPLOYMENT_DISTRIBUTION: ${{ secrets.CF_DISTRIBUTION_BUYER_STAGING }}
         run: |
+          test_variable=tstingggg
           echo ${{ secrets['ADMIN'] }}
-          echo ${{ 'testing' }}
+          echo ${{ '${test_variable}' }}
           echo ${{ format('{0}_A', github.event.inputs.web) }}
           echo ${{ format('{0}_A', github.event.inputs.environment) }}
           echo ${{ secrets[format('{0}_A', github.event.inputs.web)] }}
