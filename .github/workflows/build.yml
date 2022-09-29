@@ -27,6 +27,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-region: ${{ secrets.AWS_REGION }}
+      - name: Set Variables
+        run: |
+          echo "UPPER_WEB=$(echo "${{ inputs.web }}" | tr '[:lower:]' '[:upper:]')" >> $GITHUB_ENV
+          echo "UPPER_ENVIRONMENT=$(echo "${{ inputs.environment }}" | tr '[:lower:]' '[:upper:]')" >> $GITHUB_ENV
       - name: Build
         env:
           DEPLOYMENT_WEB: ${{ inputs.web }}
@@ -34,8 +38,6 @@ jobs:
           DEPLOYMENT_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           DEPLOYMENT_DISTRIBUTION: ${{ secrets.CF_DISTRIBUTION_BUYER_STAGING }}
         run: |
-          echo "UPPER_WEB=$(echo "${{ inputs.web }}" | tr '[:lower:]' '[:upper:]')" >> $GITHUB_ENV
-          echo "UPPER_ENVIRONMENT=$(echo "${{ inputs.environment }}" | tr '[:lower:]' '[:upper:]')" >> $GITHUB_ENV
           echo $UPPER_WEB
           echo $GITHUB_ENV
           echo $UPPER_ENVIRONMENT
