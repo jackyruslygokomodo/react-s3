@@ -13,10 +13,6 @@
       "packages/*"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://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@github.com/jackyruslygokomodo/react-s3.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
