@@ -20,7 +20,19 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
-      - name: Check
+      - uses: actions/checkout@v3
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      - name: Build
+        env:
+          DEPLOYMENT_WEB: ${{ inputs.web }}
+          DEPLOYMENT_ENV: ${{ inputs.environment }}
+          DEPLOYMENT_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          DEPLOYMENT_DISTRIBUTION: ${{ secrets.CF_DISTRIBUTION_BUYER_STAGING }}
         run: |
-          echo ${{ inputs.web }}
-          echo ${{ inputs.environment }}
+          echo ${{ secrets[format('{0}_A', github.event.inputs.web)] }}
+          echo ${{ secrets[format('{0}_A', github.event.inputs.environment)] }}
