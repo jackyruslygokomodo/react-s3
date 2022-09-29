@@ -20,6 +20,7 @@ jobs:
         env:
           DEPLOYMENT_WEB: admin
           DEPLOYMENT_ENV: staging
+          DEPLOYMENT_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           DEPLOYMENT_DISTRIBUTION: ${{ secrets.CF_DISTRIBUTION_ADMIN_STAGING }}
         run: |
           sh deployment.sh
