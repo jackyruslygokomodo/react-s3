@@ -34,10 +34,14 @@ jobs:
           DEPLOYMENT_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           DEPLOYMENT_DISTRIBUTION: ${{ secrets.CF_DISTRIBUTION_BUYER_STAGING }}
         run: |
-          test_variable=tstingggg
-          echo ${{ secrets['ADMIN'] }}
+          s="Hello World"
+          UPPER_WEB=$(echo "${{ inputs.web }}" | tr '[:lower:]' '[:upper:]')
+          UPPER_ENVIRONMENT=$(echo "${{ inputs.environment }}" | tr '[:lower:]' '[:upper:]')
+
+          echo ${{ secrets['${UPPER_WEB}'] }}
+          echo ${{ secrets['${UPPER_ENVIRONMENT}'] }}
           echo ${{ '${test_variable}' }}
           echo ${{ format('{0}_A', github.event.inputs.web) }}
           echo ${{ format('{0}_A', github.event.inputs.environment) }}
-          echo ${{ secrets[format('{0}_A', github.event.inputs.web)] }}
+          echo ${{ secrets[format('{0}', github.event.inputs.web)] }}
           echo ${{ secrets[format('{0}_A', github.event.inputs.environment)] }}
