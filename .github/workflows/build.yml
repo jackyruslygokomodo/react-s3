@@ -39,7 +39,7 @@ jobs:
           echo $UPPER_WEB
           echo $UPPER_ENVIRONMENT
           echo ${{ format('{0}_A', env.UPPER_WEB) }}
-
+          echo ${{ env }}
 
           echo ${{ secrets['${UPPER_WEB}'] }}
           echo ${{ secrets['${UPPER_ENVIRONMENT}'] }}
