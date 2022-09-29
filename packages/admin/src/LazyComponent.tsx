@@ -1,5 +1,5 @@
 const LazyComponent = () => {
-    return <div>Lazy Update 21</div>
+    return <div>Lazy Update 22</div>
 }
 
 export default LazyComponent;
