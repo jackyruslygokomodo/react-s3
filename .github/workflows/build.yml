@@ -41,8 +41,9 @@ jobs:
           echo $UPPER_WEB
           echo $GITHUB_ENV
           echo $UPPER_ENVIRONMENT
-          echo ${{ format('{0}_A', env.UPPER_WEB) }}
-          echo ${{ env }}
+          echo ${{ format('{0}', env.UPPER_WEB) }}
+          echo ${{ secrets[format('{0}', env.UPPER_WEB)] }}
+
 
           echo ${{ secrets['${UPPER_WEB}'] }}
           echo ${{ secrets['${UPPER_ENVIRONMENT}'] }}
