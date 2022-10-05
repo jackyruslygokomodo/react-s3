@@ -1,0 +1,18 @@
+name: 'Pull Request Validation'
+on: 
+  - pull_request
+
+jobs:
+  validation:
+    name: 'PR Validation'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Run ESLint
+        run: |
+          # git status
+          # ls
+          git reset --soft origin/${{ github.event.pull_request.base.ref }}
+          git status
