@@ -12,7 +12,7 @@ jobs:
           fetch-depth: 0
       - name: Run ESLint
         run: |
+          # git status
+          # ls
+          git reset --soft origin/${{ github.event.pull_request.base.ref }}
           git status
-          ls
-          # git reset --soft origin/${{ github.event.pull_request.base.ref }}
-          git log
