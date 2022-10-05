@@ -12,5 +12,5 @@ jobs:
         run: |
           git status
           ls
-          git reset --soft origin/${{ github.event.pull_request.base.ref }}
+          # git reset --soft origin/${{ github.event.pull_request.base.ref }}
           git log
